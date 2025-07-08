@@ -2,18 +2,52 @@ import React from 'react'
 import './BarraLateral.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartLine, faCoins, faKitchenSet, faBoxOpen, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom'
 
 const BarraLateral = () => {
   return (
     <div className='barra-lateral'>
-        <h1>Delivery</h1>
+        <h1 className='logo-titulo'>
+          <Link to="/" className='logo-link'>
+            Delivery
+          </Link>
+        </h1>
         <div className='menu'>
             <ul className='menu-list'>
-                <li><FontAwesomeIcon icon={faCartShopping} className='menu-list-icons' />Vendas e Pedidos</li>
-                <li><FontAwesomeIcon icon={faBoxOpen} className='menu-list-icons' />Estoque</li>
-                <li><FontAwesomeIcon icon={faKitchenSet} className='menu-list-icons' />Receitas</li>
-                <li><FontAwesomeIcon icon={faCoins} className='menu-list-icons' />Financeiro</li>
-                <li><FontAwesomeIcon icon={faChartLine} className='menu-list-icons' />Relatórios</li>
+                <li>
+                  <Link to="/vendas" className="menu-link">
+                    <FontAwesomeIcon icon={faCartShopping} className='menu-list-icons' />
+                    Vendas e Pedidos
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/estoque" className="menu-link">
+                    <FontAwesomeIcon icon={faBoxOpen} className='menu-list-icons' />
+                    Estoque
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/receitas" className="menu-link">
+                    <FontAwesomeIcon icon={faKitchenSet} className='menu-list-icons' />
+                    Receitas
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/financeiro" className="menu-link">
+                    <FontAwesomeIcon icon={faCoins} className='menu-list-icons' />
+                    Financeiro
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/relatorio" className="menu-link">
+                    <FontAwesomeIcon icon={faChartLine} className='menu-list-icons' />
+                    Relatórios
+                  </Link>
+                </li>                                     
             </ul>
         </div>
     </div>

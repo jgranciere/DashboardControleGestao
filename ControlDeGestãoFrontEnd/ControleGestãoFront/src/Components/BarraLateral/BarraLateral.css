@@ -28,16 +28,39 @@
     width: 100%;
     display: flex;
     justify-content: start;
-    padding-left: 20px;
     margin: 10px 0;
     cursor: pointer;
-    padding: 20px;
     font-size: 15px;
 }
 
 .menu-list-icons{
     width: 30px;
     padding-right: 10px;
+}
+
+/*LINKS*/
+
+.menu-list li a.menu-link, .logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+}
+
+.logo-link{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.logo-link:hover{
+    color: rgb(1, 165, 110);
+    transition: .2s;
 }
 
 /*HOVER ANIMAÇOES*/

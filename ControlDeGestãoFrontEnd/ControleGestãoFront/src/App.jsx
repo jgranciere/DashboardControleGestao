@@ -1,16 +1,27 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import TelaPrincipal from './Components/TelaPrincipal/TelaPrincipal.jsx'
+import VendasEPedidos from './Components/VendasEPedidos/VendasEPedidos.jsx'
+import Estoque from './Components/Estoque/Estoque.jsx'
+import Receitas from './Components/Receitas/Receitas.jsx'
+import Financeiro from './Components/Financeiro/Financeiro.jsx'
+import Relatorio from './Components/Relatorio/Relatorio.jsx'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <TelaPrincipal />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<TelaPrincipal />} />
+        <Route path="/vendas" element={<VendasEPedidos />} />
+        <Route path="/estoque" element={<Estoque />} />
+        <Route path="/receitas" element={<Receitas />} />
+        <Route path="/financeiro" element={<Financeiro />} />
+        <Route path="/relatorio" element={<Relatorio />} />
+      </Routes>
+    </Router>
   )
 }
 
