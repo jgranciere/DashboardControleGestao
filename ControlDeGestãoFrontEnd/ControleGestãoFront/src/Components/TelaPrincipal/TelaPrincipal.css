@@ -1,0 +1,194 @@
+.tela-principal {
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    padding: 20px;
+    height: 100vh;
+    background-color: #e6e6e6;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.tela-principal-cabecalho{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.tela-principal-informacoes{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.tela-principal-informacoes-card{
+    flex: 1 1 calc(25% - 20px); 
+    min-width: 200px; 
+    min-height: 200px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tela-principal-informacoes-card-valor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+
+/* CARDS DE GRAFICOS*/
+.tela-principal-graficos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    flex: 1; 
+}
+
+.tela-principal-graficos-card{
+    flex: 1 1 48%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tela-principal-graficos-card h1{
+    font-size: 20px;
+}
+
+.tela-principal-graficos-card-acoes-buttons{
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; 
+    padding: 20px;
+    box-sizing: border-box; 
+}
+
+.acao-rapida-botao {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.acao-rapida-icons{
+    margin-right: 10px;
+    color: white;
+}
+
+.acao-rapida-botao:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.acao-rapida-icone {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.acao-rapida-botao span {
+    font-size: 0.9em;
+}
+
+.acao-rapida-botao.acao-venda {
+    background-color: #28a745; 
+}
+
+.acao-rapida-botao.acao-despesa {
+    background-color: #007bff; 
+}
+
+.acao-rapida-botao.acao-estoque-entrada {
+    background-color: #ffc107; 
+    color: #333; 
+}
+
+.acao-rapida-botao.acao-estoque-consulta {
+    background-color: #6f42c1; 
+}
+
+.acao-rapida-botao.acao-relatorio {
+    grid-column: 1 / -1; 
+    background-color: #6c757d; 
+    flex-direction: row; 
+
+}
+
+.acao-rapida-botao.acao-relatorio .acao-rapida-icone {
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .tela-principal-informacoes-card {
+        flex: 1 1 100%; 
+    }
+}
+
+@media (max-width: 1500px) {
+  .tela-principal {
+    height: auto;
+    overflow-y: auto;
+  }
+
+  .tela-principal-graficos {
+    flex-direction: column;
+  }
+
+  .tela-principal-graficos-card {
+    height: 45vh; 
+    flex: none;   
+  }
+}
