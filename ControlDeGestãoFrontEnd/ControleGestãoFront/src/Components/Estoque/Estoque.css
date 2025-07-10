@@ -2,7 +2,7 @@
     width: calc(100% - 250px);
     margin-left: 250px;
     padding: 20px;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #e6e6e6;
     display: flex;
     flex-direction: column;
@@ -15,3 +15,183 @@
     padding: 20px;
     border-bottom: 1px solid #ccc;
 }
+
+.tela-estoque-titulo h2{
+    padding-bottom: 20px;
+    font-weight: 500;
+}
+
+.tela-estoque-informacoes{
+    width: 100%;
+    background-color: #fff;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.082);
+}
+
+.tela-estoque-inputs{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+p{
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.tela-estoque-input-ingrediente , .tela-estoque-input-ingrediente-nome{
+    width: 100%;
+}
+
+.tela-estoque-input-ingrediente select, .tela-estoque-input-ingrediente-nome input {
+    width: 100%;
+    height: 48px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+  outline: none;     
+  border: 2px solid #007bff;  
+  box-shadow: 0 0 4px #007bff33; 
+}
+
+
+.tela-estoque-inputs-qtd{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.tela-estoque-inputs-qtd input{
+    width: 100%;
+    height: 48px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+}
+
+.input-unidade-medida, .input-quantidade-entrada, .input-custo{
+    width: 100%;
+}
+
+.input-unidade-medida select:focus, .input-quantidade-entrada input:focus, .input-custo input:focus{
+    outline: none;     
+    border: 2px solid #007bff;  
+    box-shadow: 0 0 4px #007bff33; 
+}
+
+.tela-estoque-inputs-data{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.input-data-entrada, .input-data-validade{
+    width: 100%;
+}   
+
+.input-data-entrada input:focus, .input-data-validade input:focus{
+    outline: none;     
+    border: 2px solid #007bff;  
+    box-shadow: 0 0 4px #007bff33; 
+}
+
+.input-data-entrada input, .input-data-validade input{
+    width: 100%;
+    height: 48px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+}
+
+/*btn*/
+
+.tela-estoque-botao{
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.tela-estoque-botao button{
+    width: 300px;
+    height: 48px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-limpar-formulario{
+    background-color: #8d8d8d;
+}
+
+.btn-limpar-formulario:hover{
+    background-color: #575757;
+    transition: .2s;
+}
+
+.btn-registrar{
+    background-color: #00df64;
+}
+
+.btn-registrar:hover{
+    background-color: #008f3e;
+    transition: .2s;
+}
+
+
+/*pesquisar */
+
+.estoque-pesquisar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.estoque-buscar-ingrediente, .estoque-filtrar-ingrediente{
+    width: 100%;
+}
+
+.estoque-buscar-ingrediente input{
+    width: 100%;
+    height: 48px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+}
+
+.estoque-buscar-ingrediente input:focus{
+    outline: none;     
+    border: 2px solid #007bff;  
+    box-shadow: 0 0 4px #007bff33; 
+}
+
+
+
+
+

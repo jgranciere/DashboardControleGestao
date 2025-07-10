@@ -14,7 +14,7 @@ const VendasEPedidos = () => {
 
         <div className='tela-principal-vendas-informacoes'>
           <div className='tela-principal-registrar-pedido'>
-            <h1>Registrar Novo Pedido</h1>
+            <h2>Registrar Novo Pedido</h2>
           </div>
 
           <div className='tela-principal-input-pedido'>
@@ -99,6 +99,39 @@ const VendasEPedidos = () => {
             <button className='botoes-registrar'>Registrar Pedido</button>
           </div>
 
+        </div>
+
+        <div className='tela-principal-vendas-informacoes'>
+          <div className='tela-principal-registrar-pedido'>
+              <h2>Pedidos Existentes</h2>
+          </div>
+
+          <div className='tela-secundaria-inputs'>
+              <div className='inputs-pedidos-secundaria'>
+                <p>Buscar (ID/ITEM)</p>
+                <input type="text" />
+              </div>
+
+              <div className='inputs-pedidos-secundaria'>
+                <p>Filtrar por status</p>
+                <select name="" id="">
+                  <option value="todos">Todos</option>
+                  <option value="pendente">Pendente</option>
+                  <option value="concluido">Concluído</option>
+                  <option value="cancelado">Cancelado</option>
+                </select>
+              </div>
+
+              <div className='inputs-pedidos-secundaria-data'>
+                <p>Data Inicio</p>
+                <input type="date" />
+              </div>
+
+              <div className='inputs-pedidos-secundaria-data'>
+                <p>Data Fim</p>
+                <input type="date" />
+              </div>
+          </div>
         </div>
       </div>
     </>
