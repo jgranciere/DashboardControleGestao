@@ -14,6 +14,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    padding-left: 0;
     border-bottom: 1px solid #ccc;
 }
 
@@ -148,23 +149,6 @@
     margin-right: 10px;
     margin-bottom: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

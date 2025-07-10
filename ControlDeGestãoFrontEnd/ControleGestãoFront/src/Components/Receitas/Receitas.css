@@ -2,7 +2,7 @@
     width: calc(100% - 250px);
     margin-left: 250px;
     padding: 20px;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #e6e6e6;
     display: flex;
     flex-direction: column;
@@ -13,5 +13,132 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    padding-left: 0;
     border-bottom: 1px solid #ccc;
 }
+
+.tela-receitas-informacoes{
+    width: 100%;
+    background-color: #fff;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.082);
+}
+
+.tela-receitas-titulo h2{
+    padding-bottom: 20px;
+    font-weight: 500;
+}
+
+.tela-selecionar-receita{
+    margin-bottom: 20px;
+}
+
+.receita-titulo-ingredientes h3{
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.selecionar-ingredientes{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.receitas-inputs , .receitas-input-qtd{
+    width: 100%;
+}
+
+.receitas-inputs select , .receitas-input-qtd input{
+    width: 100%;
+    height: 48px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+}
+
+.receitas-inputs select:focus , .receitas-input-qtd input:focus{
+    outline: none;     
+    border: 2px solid #007bff;  
+    box-shadow: 0 0 4px #007bff33; 
+}
+
+.receitas-btn{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.receitas-btn button{
+    width: 100%;
+    height: 48px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.receitas-btn button:hover{
+    background-color: #004da0;
+    transition: .2s;
+}
+
+.receitas-tabela{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 20px;
+    width: fit-content;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.tabela-pedidos{
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.receitas-valor-total{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tela-selecionar-receita input{
+    width: 100%;
+    height: 48px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+}
+
+.tela-selecionar-receita input:focus{
+    outline: none;     
+    border: 2px solid #007bff;  
+    box-shadow: 0 0 4px #007bff33;   
+}
+
+
+
+
+
+
+
+

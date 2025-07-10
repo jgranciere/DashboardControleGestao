@@ -28,7 +28,7 @@ const Estoque = () => {
             </div>
 
             <div className='tela-estoque-input-ingrediente-nome'>
-              <p>Ingrediente Existente:</p>
+              <p>Nome do Ingrediente:</p>
               <input type="text" />
             </div>
           </div>
