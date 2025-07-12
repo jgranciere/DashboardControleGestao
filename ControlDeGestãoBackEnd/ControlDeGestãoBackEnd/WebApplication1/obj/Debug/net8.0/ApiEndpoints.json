@@ -219,5 +219,53 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApplication1.Controllers.ReceitasController",
+    "Method": "CriarReceita",
+    "RelativePath": "api/Receitas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "WebApplication1.DTO.ReceitaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApplication1.Controllers.ReceitasController",
+    "Method": "GetReceitaPorProduto",
+    "RelativePath": "api/Receitas/{produtoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "produtoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApplication1.Controllers.ReceitasController",
+    "Method": "GetCustoDeProducao",
+    "RelativePath": "api/Receitas/custo/{produtoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "produtoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

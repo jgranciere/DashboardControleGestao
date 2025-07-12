@@ -369,6 +369,83 @@
           }
         }
       }
+    },
+    "/api/Receitas": {
+      "post": {
+        "tags": [
+          "Receitas"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReceitaDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReceitaDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReceitaDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Receitas/{produtoId}": {
+      "get": {
+        "tags": [
+          "Receitas"
+        ],
+        "parameters": [
+          {
+            "name": "produtoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Receitas/custo/{produtoId}": {
+      "get": {
+        "tags": [
+          "Receitas"
+        ],
+        "parameters": [
+          {
+            "name": "produtoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -414,6 +491,20 @@
           },
           "unidadeMedida": {
             "$ref": "#/components/schemas/UnidadeMedida"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ItemReceitaDTO": {
+        "type": "object",
+        "properties": {
+          "ingredienteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quantidade": {
+            "type": "number",
+            "format": "double"
           }
         },
         "additionalProperties": false
@@ -516,6 +607,27 @@
           "idCategoria": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReceitaDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "produtoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "itens": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemReceitaDTO"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
