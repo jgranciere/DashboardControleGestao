@@ -341,6 +341,7 @@ select:focus {
 
     .vendas-inputs-valor-total{
         width: 100%;
+        flex-direction: column;
     }
 
     .total-pedido{
@@ -353,9 +354,29 @@ select:focus {
     .tela-principal-vendas-opcoes-pagamento{
         width: 100%;
         gap: 10px;
+        flex-direction: column;
     }
 
     .tela-principal-options-produto{
+        width: 100%;
+    }
+
+    .botoes-limpar-registrar{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .botoes-limpar-registrar button{
+        width: 100%;
+    }
+
+    .tela-secundaria-inputs{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1050px) {
+    .tela-principal-pedido-button button{
         width: 100%;
     }
 }

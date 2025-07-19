@@ -135,6 +135,11 @@
     box-shadow: 0 0 4px #007bff33;   
 }
 
+@media (max-width: 950px) {
+    .selecionar-ingredientes{
+        flex-direction: column;
+    }
+}
 
 
 

@@ -59,6 +59,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin: 10px;
 }
 
 .despesa{
@@ -110,4 +111,29 @@
 
 .despesa-btn:hover{
     background-color: rgb(255, 153, 153);
+}
+
+@media (max-width: 1100px) {
+    .financeiro-informaçoes{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .financeiro-valores{
+        margin: 10px;
+        width: 200px;
+    }
+
+    .financeiro-periodo{
+        width: 100%;
+    }
+}
+
+@media (max-width: 950px) {
+    .inputs-despesas-financeiro{
+        flex-direction: column;
+    }
+
+    
 }

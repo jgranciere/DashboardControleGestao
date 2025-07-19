@@ -192,7 +192,16 @@ select:focus {
     box-shadow: 0 0 4px #007bff33; 
 }
 
+@media (max-width: 950px) {
+    .tela-estoque-inputs, .tela-estoque-inputs-qtd, .tela-estoque-botao, .tela-estoque-botao button{
+        width: 100%;
+        flex-direction: column;
+    }
 
+    .tela-estoque-inputs-data{
+        flex-direction: column;
+    }
+}
 
 
 
