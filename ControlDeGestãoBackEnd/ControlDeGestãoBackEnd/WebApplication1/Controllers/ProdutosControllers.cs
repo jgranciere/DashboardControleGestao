@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.DTO;
 using WebApplication1.Model;
-using static WebApplication1.Model.Produto;
+
 
 
 
@@ -38,7 +38,7 @@ namespace WebApplication1.Controllers
                 ProdutoId = dto.ProdutoId,
                 Quantidade = dto.Quantidade,
                 Tipo = "entrada",
-                UnidadeMedida = dto.UnidadeMedida // se usar no modelo lancamento
+                UnidadeMedida = dto.UnidadeMedida 
             };
 
             _context.Lancamentos.Add(lancamento);
@@ -212,7 +212,7 @@ namespace WebApplication1.Controllers
             if (categoria == null)
                 return BadRequest("Categoria inválida.");
 
-            // Atualiza os dados diretamente
+            
             produto.Nome = produtoDto.Nome;
             produto.Descricao = produtoDto.Descricao;
             produto.Preco = produtoDto.Preco;

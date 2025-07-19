@@ -11,6 +11,9 @@ namespace Database;
     public DbSet<Lancamento> Lancamentos { get; set; }
     public DbSet<Produto> Produtos { get; set; }
     public DbSet<Categoria> Categorias { get; set; }
+    public DbSet<Receita> Receitas { get; set; }
+    public DbSet<ItemReceita> ItensReceita { get; set; }
+
 
 
 
