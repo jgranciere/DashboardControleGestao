@@ -11,41 +11,16 @@ namespace WebApplication1.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class EstoqueController : ControllerBase
+    public class NovoProdutoController : ControllerBase
     {
         private readonly GestaoDbContext _context;
 
-        public EstoqueController(GestaoDbContext context)
+        public NovoProdutoController(GestaoDbContext context)
         {
             _context = context;
         }
 
-        [HttpPost("entrada")]
-        public async Task<IActionResult> EntradaEstoque([FromBody] EstoqueDTO dto)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            var produto = await _context.Produtos.FindAsync(dto.ProdutoId);
-            if (produto == null)
-                return NotFound("Produto não encontrado.");
-
-            
-
-            
-            var lancamento = new Lancamento
-            {
-                ProdutoId = dto.ProdutoId,
-                Quantidade = dto.Quantidade,
-                Tipo = "entrada",
-                UnidadeMedida = dto.UnidadeMedida 
-            };
-
-            _context.Lancamentos.Add(lancamento);
-            await _context.SaveChangesAsync();
-
-            return Ok(lancamento);
-        }
+       
 
 
 
@@ -176,8 +151,11 @@ namespace WebApplication1.Controllers
                 Preco = produtoDto.Preco,
                 Imagem = produtoDto.Imagem,
                 Categoria = categoria,
-                UnidadeMedida = produtoDto.UnidadeMedida
+                UnidadeMedida = produtoDto.UnidadeMedida,
+                EstoqueMinimo = produtoDto.EstoqueMinimo,
+                Validade = produtoDto.Validade
             };
+
 
             _context.Produtos.Add(produto);
             await _context.SaveChangesAsync();

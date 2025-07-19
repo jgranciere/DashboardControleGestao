@@ -3,6 +3,7 @@ using System;
 using Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace WebApplication1.Migrations
 {
     [DbContext(typeof(GestaoDbContext))]
-    partial class GestaoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250719174134_AddEstoqueMinimoEValidadeAoProduto")]
+    partial class AddEstoqueMinimoEValidadeAoProduto
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -117,9 +120,6 @@ namespace WebApplication1.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<double>("EstoqueMinimo")
-                        .HasColumnType("double precision");
-
                     b.Property<string>("Imagem")
                         .IsRequired()
                         .HasColumnType("text");
@@ -133,9 +133,6 @@ namespace WebApplication1.Migrations
 
                     b.Property<int>("UnidadeMedida")
                         .HasColumnType("integer");
-
-                    b.Property<DateTime>("Validade")
-                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 

@@ -1,8 +1,8 @@
-﻿namespace WebApplication1.DTO
-{
-    public class ItemReceitaDTO
+﻿    namespace WebApplication1.DTO
     {
-        public int IngredienteId {get; set;}
-        public double Quantidade { get; set; }
+        public class ItemReceitaDTO
+        {
+            public int IngredienteId {get; set;}
+            public double Quantidade { get; set; }
+        }
     }
-}

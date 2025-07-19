@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "WebApplication1.Controllers.AlertaController",
+    "Method": "GetAlertas",
+    "RelativePath": "api/Alerta/alertas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebApplication1.Controllers.CategoriasController",
     "Method": "GetCategorias",
     "RelativePath": "api/Categorias",
@@ -79,9 +89,41 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebApplication1.Controllers.EstoqueController",
+    "ContainingType": "WebApplication1.Controllers.Vitrine.EntradaSaidaController",
+    "Method": "Create",
+    "RelativePath": "api/EntradaSaida",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lancamentoDto",
+        "Type": "WebApplication1.DTO.LancamentoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApplication1.Controllers.Vitrine.EntradaSaidaController",
+    "Method": "GetByProduto",
+    "RelativePath": "api/EntradaSaida/produto/{produtoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "produtoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApplication1.Controllers.NovoProdutoController",
     "Method": "GetProdutos",
-    "RelativePath": "api/Estoque",
+    "RelativePath": "api/NovoProduto",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -120,25 +162,25 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebApplication1.Controllers.EstoqueController",
+    "ContainingType": "WebApplication1.Controllers.NovoProdutoController",
     "Method": "CriarProduto",
-    "RelativePath": "api/Estoque",
+    "RelativePath": "api/NovoProduto",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "produtoDto",
-        "Type": "WebApplication1.DTO.ProdutoDTO",
+        "Type": "ProdutoDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebApplication1.Controllers.EstoqueController",
+    "ContainingType": "WebApplication1.Controllers.NovoProdutoController",
     "Method": "DeleteProduto",
-    "RelativePath": "api/Estoque/{id}",
+    "RelativePath": "api/NovoProduto/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -152,9 +194,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebApplication1.Controllers.EstoqueController",
+    "ContainingType": "WebApplication1.Controllers.NovoProdutoController",
     "Method": "AtualizarProduto",
-    "RelativePath": "api/Estoque/{id}",
+    "RelativePath": "api/NovoProduto/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -166,55 +208,7 @@
       },
       {
         "Name": "produtoDto",
-        "Type": "WebApplication1.DTO.ProdutoDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebApplication1.Controllers.EstoqueController",
-    "Method": "EntradaEstoque",
-    "RelativePath": "api/Estoque/entrada",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "WebApplication1.DTO.EstoqueDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebApplication1.Controllers.Vitrine.Controllers.LancamentosController",
-    "Method": "Create",
-    "RelativePath": "api/Lancamentos",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "lancamento",
-        "Type": "WebApplication1.Model.Lancamento",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebApplication1.Controllers.Vitrine.Controllers.LancamentosController",
-    "Method": "GetByProduto",
-    "RelativePath": "api/Lancamentos/produto/{produtoId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "produtoId",
-        "Type": "System.Int32",
+        "Type": "ProdutoDTO",
         "IsRequired": true
       }
     ],

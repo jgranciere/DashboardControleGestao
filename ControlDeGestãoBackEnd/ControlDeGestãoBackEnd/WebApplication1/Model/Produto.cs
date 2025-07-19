@@ -35,5 +35,11 @@ namespace WebApplication1.Model
         [Required(ErrorMessage = "Informe uma Categoria para o Produto")]
         public Categoria Categoria { get; set; }
 
+
+        [Required(ErrorMessage = "Informe EstoqueMinimo para o Produto")]
+        public double EstoqueMinimo { get; set; } = 1;
+        [Required(ErrorMessage = "Informe uma Validade para o Produto")]
+        public DateTime? Validade { get; set; }
+
     }
 }

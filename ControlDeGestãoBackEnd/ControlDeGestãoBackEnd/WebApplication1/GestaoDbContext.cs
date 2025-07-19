@@ -13,7 +13,8 @@ namespace Database;
     public DbSet<Categoria> Categorias { get; set; }
     public DbSet<Receita> Receitas { get; set; }
     public DbSet<ItemReceita> ItensReceita { get; set; }
-
+    
+ 
 
 
 
