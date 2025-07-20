@@ -2,12 +2,12 @@
 
 namespace WebApplication1.Model
 {
-    public class Lancamento
+    public class EntradaSaida
     {
         public int Id { get; set; }
         public int ProdutoId { get; set; }
         [ForeignKey("ProdutoId")]
-        public Produto? Produto { get; set; }
+        public CriaProduto? Produto { get; set; }
         public double Quantidade { get; set; }
         public string Tipo { get; set; }
 

@@ -12,7 +12,7 @@ namespace WebApplication1.Model
         Litro,
         Mililitro
     }
-    public class Produto
+    public class CriaProduto
     {
        
 

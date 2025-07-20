@@ -174,17 +174,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/LancamentoDTO"
+                "$ref": "#/components/schemas/EntradaSaidaDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/LancamentoDTO"
+                "$ref": "#/components/schemas/EntradaSaidaDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/LancamentoDTO"
+                "$ref": "#/components/schemas/EntradaSaidaDTO"
               }
             }
           }
@@ -266,17 +266,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProdutoDTO"
+                "$ref": "#/components/schemas/CriaProdutoDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProdutoDTO"
+                "$ref": "#/components/schemas/CriaProdutoDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ProdutoDTO"
+                "$ref": "#/components/schemas/CriaProdutoDTO"
               }
             }
           }
@@ -329,17 +329,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProdutoDTO"
+                "$ref": "#/components/schemas/CriaProdutoDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProdutoDTO"
+                "$ref": "#/components/schemas/CriaProdutoDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ProdutoDTO"
+                "$ref": "#/components/schemas/CriaProdutoDTO"
               }
             }
           }
@@ -453,49 +453,7 @@
         },
         "additionalProperties": false
       },
-      "ItemReceitaDTO": {
-        "type": "object",
-        "properties": {
-          "ingredienteId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "quantidade": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "additionalProperties": false
-      },
-      "LancamentoDTO": {
-        "required": [
-          "produtoId",
-          "quantidade",
-          "tipo",
-          "unidadeMedida"
-        ],
-        "type": "object",
-        "properties": {
-          "produtoId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "quantidade": {
-            "type": "number",
-            "format": "double"
-          },
-          "tipo": {
-            "minLength": 1,
-            "pattern": "entrada|saida",
-            "type": "string"
-          },
-          "unidadeMedida": {
-            "$ref": "#/components/schemas/UnidadeMedida"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ProdutoDTO": {
+      "CriaProdutoDTO": {
         "required": [
           "estoqueMinimo",
           "nome",
@@ -535,6 +493,48 @@
           "validade": {
             "type": "string",
             "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EntradaSaidaDTO": {
+        "required": [
+          "produtoId",
+          "quantidade",
+          "tipo",
+          "unidadeMedida"
+        ],
+        "type": "object",
+        "properties": {
+          "produtoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quantidade": {
+            "type": "number",
+            "format": "double"
+          },
+          "tipo": {
+            "minLength": 1,
+            "pattern": "entrada|saida",
+            "type": "string"
+          },
+          "unidadeMedida": {
+            "$ref": "#/components/schemas/UnidadeMedida"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ItemReceitaDTO": {
+        "type": "object",
+        "properties": {
+          "ingredienteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quantidade": {
+            "type": "number",
+            "format": "double"
           }
         },
         "additionalProperties": false

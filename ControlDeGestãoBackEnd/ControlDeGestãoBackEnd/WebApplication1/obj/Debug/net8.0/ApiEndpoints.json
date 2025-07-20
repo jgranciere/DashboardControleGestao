@@ -98,7 +98,7 @@
     "Parameters": [
       {
         "Name": "lancamentoDto",
-        "Type": "WebApplication1.DTO.LancamentoDTO",
+        "Type": "WebApplication1.DTO.EntradaSaidaDTO",
         "IsRequired": true
       }
     ],
@@ -171,7 +171,7 @@
     "Parameters": [
       {
         "Name": "produtoDto",
-        "Type": "ProdutoDTO",
+        "Type": "CriaProdutoDTO",
         "IsRequired": true
       }
     ],
@@ -208,7 +208,7 @@
       },
       {
         "Name": "produtoDto",
-        "Type": "ProdutoDTO",
+        "Type": "CriaProdutoDTO",
         "IsRequired": true
       }
     ],

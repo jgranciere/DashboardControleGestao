@@ -33,7 +33,7 @@ namespace WebApplication1.Controllers
              bool apenasDisponiveis = false
          )
         {
-            IQueryable<Produto> produtosQuery = _context.Produtos.Include(p => p.Categoria);
+            IQueryable<CriaProduto> produtosQuery = _context.Produtos.Include(p => p.Categoria);
 
             if (!string.IsNullOrEmpty(nome))
             {
@@ -149,7 +149,7 @@ namespace WebApplication1.Controllers
                 return BadRequest("Unidade de medida inválida. Use: Unidade, Kg, Grama, Litro, Mililitro.");
             }
 
-            var produto = new Produto
+            var produto = new CriaProduto
             {
                 Nome = produtoDto.Nome,
                 Descricao = produtoDto.Descricao,

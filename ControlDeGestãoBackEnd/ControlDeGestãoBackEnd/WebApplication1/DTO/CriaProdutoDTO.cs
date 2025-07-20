@@ -2,7 +2,7 @@
 using System.Text.Json.Serialization;
 using WebApplication1.Model;
 
-public class ProdutoDTO
+public class CriaProdutoDTO
 {
     [Required]
     public string Nome { get; set; }

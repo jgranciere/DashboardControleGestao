@@ -3,7 +3,7 @@ using WebApplication1.Model;
 
 namespace WebApplication1.DTO
 {
-    public class LancamentoDTO
+    public class EntradaSaidaDTO
     {
         [Required]
         public int ProdutoId { get; set; }

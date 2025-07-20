@@ -32,7 +32,7 @@ namespace WebApplication1.Controllers.Vitrine
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] LancamentoDTO lancamentoDto)
+        public async Task<IActionResult> Create([FromBody] EntradaSaidaDTO lancamentoDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
