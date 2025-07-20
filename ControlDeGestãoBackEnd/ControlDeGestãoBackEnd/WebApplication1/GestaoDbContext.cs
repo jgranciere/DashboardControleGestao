@@ -8,8 +8,8 @@ namespace Database;
   public partial class GestaoDbContext : DbContext
   {
    
-    public DbSet<Lancamento> Lancamentos { get; set; }
-    public DbSet<Produto> Produtos { get; set; }
+    public DbSet<EntradaSaida> Lancamentos { get; set; }
+    public DbSet<CriaProduto> Produtos { get; set; }
     public DbSet<Categoria> Categorias { get; set; }
     public DbSet<Receita> Receitas { get; set; }
     public DbSet<ItemReceita> ItensReceita { get; set; }

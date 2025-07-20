@@ -20,7 +20,6 @@ namespace WebApplication1.Controllers
             _context = context;
         }
 
-       
 
 
 
@@ -125,8 +124,14 @@ namespace WebApplication1.Controllers
         }
 
 
+
+
+
+
+
+
         [HttpPost]
-        public async Task<IActionResult> CriarProduto([FromBody] ProdutoDTO produtoDto)
+        public async Task<IActionResult> CriarProduto([FromBody] CriaProdutoDTO produtoDto)
         {
             if (!ModelState.IsValid)
             {
@@ -164,6 +169,12 @@ namespace WebApplication1.Controllers
         }
 
 
+
+
+
+
+
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduto(int id)
         {
@@ -178,8 +189,14 @@ namespace WebApplication1.Controllers
             return NoContent();
         }
 
+
+
+
+
+
+
         [HttpPut("{id}")]
-        public async Task<IActionResult> AtualizarProduto(int id, [FromBody] ProdutoDTO produtoDto)
+        public async Task<IActionResult> AtualizarProduto(int id, [FromBody] CriaProdutoDTO produtoDto)
         {
             var produto = await _context.Produtos.Include(p => p.Categoria).FirstOrDefaultAsync(p => p.Id == id);
 
@@ -204,9 +221,5 @@ namespace WebApplication1.Controllers
         }
 
 
-
-
-
     }
 }
-

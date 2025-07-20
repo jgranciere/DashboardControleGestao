@@ -6,7 +6,7 @@
         public int receitaId { get; set; }
         public Receita Receita { get; set; }
         public int IngredienteId { get; set; }
-        public Produto Ingrediente { get; set; }
+        public CriaProduto Ingrediente { get; set; }
         public double Quantidade { get; set; }
     }
 }

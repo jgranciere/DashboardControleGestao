@@ -54,7 +54,7 @@ namespace WebApplication1.Controllers.Vitrine
             if (lancamentoDto.Tipo == "saida" && estoqueAtual < lancamentoDto.Quantidade)
                 return BadRequest("Estoque insuficiente para essa saída.");
 
-            var lancamento = new Lancamento
+            var lancamento = new EntradaSaida
             {
                 ProdutoId = lancamentoDto.ProdutoId,
                 Quantidade = lancamentoDto.Quantidade,
