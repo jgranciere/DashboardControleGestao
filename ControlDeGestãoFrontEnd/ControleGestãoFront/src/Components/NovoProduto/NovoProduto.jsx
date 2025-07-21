@@ -13,7 +13,7 @@ const NovoProduto = () => {
                 </div>
 
                 <div className='tela-principal-cadastrar'>
-
+                    <h1>ola</h1>
                 </div>
 
             </div>
