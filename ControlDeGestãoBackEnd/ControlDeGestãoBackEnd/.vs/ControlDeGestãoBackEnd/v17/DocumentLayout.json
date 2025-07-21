@@ -1,12 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\joaop\\OneDrive\\\u00C1rea de Trabalho\\software Controle de Gest\u00E3o\\ControlDeGest\u00E3oBackEnd\\ControlDeGest\u00E3oBackEnd\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\joaop\\OneDrive\\\u00C1rea de Trabalho\\DashboardControleGestao\\ControlDeGest\u00E3oBackEnd\\ControlDeGest\u00E3oBackEnd\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9387ADDC-45EF-4FD0-96FB-589C506204FA}|WebApplication1\\WebApplication1.csproj|c:\\users\\joaop\\onedrive\\\u00E1rea de trabalho\\dashboardcontrolegestao\\controldegest\u00E3obackend\\controldegest\u00E3obackend\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9387ADDC-45EF-4FD0-96FB-589C506204FA}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\joaop\\OneDrive\\\u00C1rea de Trabalho\\DashboardControleGestao\\ControlDeGest\u00E3oBackEnd\\ControlDeGest\u00E3oBackEnd\\WebApplication1\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApplication1\\appsettings.json",
+              "ToolTip": "C:\\Users\\joaop\\OneDrive\\\u00C1rea de Trabalho\\DashboardControleGestao\\ControlDeGest\u00E3oBackEnd\\ControlDeGest\u00E3oBackEnd\\WebApplication1\\appsettings.json",
+              "RelativeToolTip": "WebApplication1\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-20T20:32:07.94Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
