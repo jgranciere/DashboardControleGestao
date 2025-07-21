@@ -45,64 +45,7 @@ namespace WebApplication1.Migrations
                     b.ToTable("Categorias");
                 });
 
-            modelBuilder.Entity("WebApplication1.Model.ItemReceita", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("IngredienteId")
-                        .HasColumnType("integer");
-
-                    b.Property<double>("Quantidade")
-                        .HasColumnType("double precision");
-
-                    b.Property<int>("receitaId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IngredienteId");
-
-                    b.HasIndex("receitaId");
-
-                    b.ToTable("ItensReceita");
-                });
-
-            modelBuilder.Entity("WebApplication1.Model.Lancamento", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("Data")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("ProdutoId")
-                        .HasColumnType("integer");
-
-                    b.Property<double>("Quantidade")
-                        .HasColumnType("double precision");
-
-                    b.Property<string>("Tipo")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("UnidadeMedida")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProdutoId");
-
-                    b.ToTable("Lancamentos");
-                });
-
-            modelBuilder.Entity("WebApplication1.Model.Produto", b =>
+            modelBuilder.Entity("WebApplication1.Model.CriaProduto", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -144,6 +87,105 @@ namespace WebApplication1.Migrations
                     b.ToTable("Produtos");
                 });
 
+            modelBuilder.Entity("WebApplication1.Model.EntradaSaida", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("Data")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("ProdutoId")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("Quantidade")
+                        .HasColumnType("double precision");
+
+                    b.Property<string>("Tipo")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("UnidadeMedida")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProdutoId");
+
+                    b.ToTable("Lancamentos");
+                });
+
+            modelBuilder.Entity("WebApplication1.Model.Ingrediente", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("CustoMedio")
+                        .HasColumnType("decimal(10, 2)");
+
+                    b.Property<DateTime>("DataUltimaAtualizacao")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("DataValidadeProxima")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<decimal>("EstoqueMinimo")
+                        .HasColumnType("decimal(10, 2)");
+
+                    b.Property<string>("FornecedorPadrao")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<decimal>("QuantidadeEstoque")
+                        .HasColumnType("decimal(10, 2)");
+
+                    b.Property<string>("UnidadeMedida")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Ingredientes");
+                });
+
+            modelBuilder.Entity("WebApplication1.Model.ItemReceita", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("IngredienteId")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("Quantidade")
+                        .HasColumnType("double precision");
+
+                    b.Property<int>("receitaId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IngredienteId");
+
+                    b.HasIndex("receitaId");
+
+                    b.ToTable("ItensReceita");
+                });
+
             modelBuilder.Entity("WebApplication1.Model.Receita", b =>
                 {
                     b.Property<int>("Id")
@@ -162,9 +204,31 @@ namespace WebApplication1.Migrations
                     b.ToTable("Receitas");
                 });
 
+            modelBuilder.Entity("WebApplication1.Model.CriaProduto", b =>
+                {
+                    b.HasOne("WebApplication1.Model.Categoria", "Categoria")
+                        .WithMany()
+                        .HasForeignKey("CategoriaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Categoria");
+                });
+
+            modelBuilder.Entity("WebApplication1.Model.EntradaSaida", b =>
+                {
+                    b.HasOne("WebApplication1.Model.CriaProduto", "Produto")
+                        .WithMany()
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Produto");
+                });
+
             modelBuilder.Entity("WebApplication1.Model.ItemReceita", b =>
                 {
-                    b.HasOne("WebApplication1.Model.Produto", "Ingrediente")
+                    b.HasOne("WebApplication1.Model.CriaProduto", "Ingrediente")
                         .WithMany()
                         .HasForeignKey("IngredienteId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -181,31 +245,9 @@ namespace WebApplication1.Migrations
                     b.Navigation("Receita");
                 });
 
-            modelBuilder.Entity("WebApplication1.Model.Lancamento", b =>
-                {
-                    b.HasOne("WebApplication1.Model.Produto", "Produto")
-                        .WithMany()
-                        .HasForeignKey("ProdutoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Produto");
-                });
-
-            modelBuilder.Entity("WebApplication1.Model.Produto", b =>
-                {
-                    b.HasOne("WebApplication1.Model.Categoria", "Categoria")
-                        .WithMany()
-                        .HasForeignKey("CategoriaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Categoria");
-                });
-
             modelBuilder.Entity("WebApplication1.Model.Receita", b =>
                 {
-                    b.HasOne("WebApplication1.Model.Produto", "Produto")
+                    b.HasOne("WebApplication1.Model.CriaProduto", "Produto")
                         .WithMany()
                         .HasForeignKey("ProdutoId")
                         .OnDelete(DeleteBehavior.Cascade)

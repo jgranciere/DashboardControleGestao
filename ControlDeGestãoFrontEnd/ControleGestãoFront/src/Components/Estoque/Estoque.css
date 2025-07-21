@@ -171,6 +171,7 @@ select:focus {
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    padding-bottom: 20px;
 }
 
 .estoque-buscar-ingrediente, .estoque-filtrar-ingrediente{
@@ -190,6 +191,152 @@ select:focus {
     outline: none;     
     border: 2px solid #007bff;  
     box-shadow: 0 0 4px #007bff33; 
+}
+
+/* Estilos para mensagens de alerta */
+.mensagem-alerta {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid;
+    border-radius: 0.5rem;
+    font-weight: bold;
+}
+
+.mensagem-alerta.loading {
+    background-color: #e0f2fe; 
+    border-color: #3b82f6; 
+    color: #1e40af; 
+}
+
+.mensagem-alerta.error {
+    background-color: #fee2e2; 
+    border-color: #ef4444; 
+    color: #b91c1c; 
+}
+
+
+.estoque-tabela-container {
+    overflow-x: auto;
+    border: 1px solid #e5e7eb; 
+    border-radius: 0.75rem; 
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); 
+}
+
+.estoque-tabela {
+    min-width: 100%;
+    background-color: #fff;
+    border-collapse: collapse; 
+}
+
+.estoque-tabela thead {
+    background-color: #f9fafb; 
+}
+
+.estoque-tabela th,
+.estoque-tabela td {
+    padding: 0.75rem 1.5rem; 
+    text-align: center;
+    font-size: 0.75rem; 
+    font-weight: 500; 
+    color: #6b7280; 
+    text-transform: uppercase;
+    letter-spacing: 0.05em; 
+    white-space: nowrap; 
+
+}
+
+.estoque-tabela tbody tr {
+    border-bottom: 1px solid #e5e7eb; 
+}
+
+.estoque-tabela tbody tr:last-child {
+    border-bottom: none; 
+}
+
+.estoque-tabela tbody td {
+    font-weight: 500; 
+    color: #1f2937; 
+}
+
+.estoque-tabela-mensagem {
+    text-align: center;
+    padding: 1rem;
+    color: #6b7280; 
+}
+
+.estoque-tabela-acoes {
+    display: flex;
+    gap: 0.5rem; 
+}
+
+.btn-acao-editar {
+    color: #2563eb; 
+    font-weight: 600; 
+    cursor: pointer;
+}
+
+.btn-acao-entrada {
+    color: #8b5cf6; 
+    font-weight: 600; 
+    cursor: pointer;
+}
+
+.btn-acao-excluir {
+    color: #dc2626; 
+    font-weight: 600; 
+    cursor: pointer;
+}
+
+.status-normal {
+    background-color: #d1fae5; 
+    color: #065f46; 
+    padding: 0.25rem 0.75rem; 
+    border-radius: 9999px; 
+    font-size: 0.875rem; 
+    font-weight: 600; 
+}
+
+.status-abaixo-minimo {
+    background-color: #fef3c7; 
+    color: #92400e; 
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.status-critico {
+    background-color: #fee2e2; 
+    color: #991b1b; 
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.status-proximo-validade {
+    background-color: #ffe4e6; 
+    color: #881337; 
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.status-vencido {
+    background-color: #fecaca; 
+    color: #7f1d1d; 
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.estoque-paginacao {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem; 
+    color: #4b5563; 
 }
 
 @media (max-width: 950px) {
