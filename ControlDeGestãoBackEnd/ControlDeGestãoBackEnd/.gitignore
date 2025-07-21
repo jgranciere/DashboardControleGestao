@@ -2,25 +2,25 @@
 # .gitignore para projetos .NET C# (Backend) e React (Frontend)
 # ==============================================================================
 
-# --- Ignorar arquivos e diretórios padrão do .NET / C# ---
+# --- Ignorar arquivos e diretï¿½rios padrï¿½o do .NET / C# ---
 
-# Diretórios de build (onde os executáveis e DLLs são compilados)
-# O '*' antes da barra garante que pastas 'bin' e 'obj' em qualquer subdiretório serão ignoradas.
+# Diretï¿½rios de build (onde os executï¿½veis e DLLs sï¿½o compilados)
+# O '*' antes da barra garante que pastas 'bin' e 'obj' em qualquer subdiretï¿½rio serï¿½o ignoradas.
 [Bb]in/
 [Oo]bj/
 
 # Pacotes NuGet
-# Os pacotes NuGet são restaurados automaticamente. Não devem ser versionados.
+# Os pacotes NuGet sï¿½o restaurados automaticamente. Nï¿½o devem ser versionados.
 packages/
-# diretório global de pacotes, se não estiver dentro da pasta de solução
+# diretï¿½rio global de pacotes, se nï¿½o estiver dentro da pasta de soluï¿½ï¿½o
 !packages/*.csproj
 *.nupkg
 # .NET tool restore
 .config/dotnet-tools.json
 .config/dotnet-tools.json.bak
 
-# Arquivos de usuário do Visual Studio
-# Contêm configurações específicas do usuário e do IDE
+# Arquivos de usuï¿½rio do Visual Studio
+# Contï¿½m configuraï¿½ï¿½es especï¿½ficas do usuï¿½rio e do IDE
 *.suo
 *.user
 *.config.user
@@ -33,18 +33,18 @@ packages/
 *.ldf
 *.publish.xml
 
-# Arquivos de designer gerados automaticamente que podem ter mudanças frequentes e irrelevantes
+# Arquivos de designer gerados automaticamente que podem ter mudanï¿½as frequentes e irrelevantes
 # Geralmente arquivos .Designer.cs ou .g.i.cs (para WPF/UWP)
 *.designer.cs
 *.g.i.cs
 *.generated.cs
 
-# Arquivos de teste e relatório de teste
+# Arquivos de teste e relatï¿½rio de teste
 *.trx
 TestResults/
 
 # Arquivos de debug e trace
-*.pdb # Arquivos de símbolo de depuração
+*.pdb 
 *.dll.config
 *.exe.config
 *.log
@@ -53,17 +53,17 @@ TestResults/
 *.vslog
 *.diag
 
-# Arquivos de cache e indexação do Visual Studio (muito importantes para ignorar)
-.vs/ # Pasta oculta do Visual Studio (contém arquivos como .vsidx, .suo, etc.)
-# Se você tiver arquivos .vsidx em outros lugares (como no seu caso anterior), adicione:
-*.vsidx # Arquivos de índice de conteúdo (causam muitos problemas se versionados)
-*.sdf # Cache de IntelliSense do SQL Server Compact Edition
+# Arquivos de cache e indexaï¿½ï¿½o do Visual Studio (muito importantes para ignorar)
+.vs/ 
+# Se vocï¿½ tiver arquivos .vsidx em outros lugares (como no seu caso anterior), adicione:
+*.vsidx 
+*.sdf 
 *.opendb
 *.opensdf
 *.sqlite
 *.sqlite-shm
 *.sqlite-wal
-# Se você usa o LocalDB para desenvolvimento:
+# Se vocï¿½ usa o LocalDB para desenvolvimento:
 *.mdf
 *.ldf
 
@@ -75,19 +75,19 @@ TestResults/
 # Outros arquivos do .NET
 # Arquivos de metadados de pacotes
 project.assets.json
-# Arquivos de bloqueio de dependências do .NET
+# Arquivos de bloqueio de dependï¿½ncias do .NET
 project.lock.json
 
-# Arquivos de configurações de publicação (publish profiles)
+# Arquivos de configuraï¿½ï¿½es de publicaï¿½ï¿½o (publish profiles)
 *.pubxml
 *.pubxml.user
 
 # Ferramentas de Build (ex: MSBuild extensions)
 .msbuild/
 
-# --- Ignorar arquivos e diretórios padrão do React / Node.js ---
+# --- Ignorar arquivos e diretï¿½rios padrï¿½o do React / Node.js ---
 
-# Diretório de módulos Node (muito grande, gerado por npm/yarn)
+# Diretï¿½rio de mï¿½dulos Node (muito grande, gerado por npm/yarn)
 node_modules/
 
 # Logs de debug do NPM
@@ -95,7 +95,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Variáveis de ambiente (específicas do ambiente de desenvolvimento)
+# Variï¿½veis de ambiente (especï¿½ficas do ambiente de desenvolvimento)
 .env
 .env.local
 .env.development.local
@@ -104,20 +104,20 @@ yarn-error.log*
 .env.*.local
 .env.*
 
-# Diretórios de build do React (gerados ao rodar 'npm run build' ou 'yarn build')
-# O nome padrão para apps criados com create-react-app é 'build'
+# Diretï¿½rios de build do React (gerados ao rodar 'npm run build' ou 'yarn build')
+# O nome padrï¿½o para apps criados com create-react-app ï¿½ 'build'
 build/
-# Se você usa outra ferramenta (ex: Vite, Webpack configurado para 'dist'):
+# Se vocï¿½ usa outra ferramenta (ex: Vite, Webpack configurado para 'dist'):
 dist/
 
-# Outros arquivos de cache/temporários do React/Node
-.parcel-cache/ # Cache do Parcel
-.cache/ # Cache geral (pode ser usado por outras libs)
-coverage/ # Relatórios de cobertura de testes
+# Outros arquivos de cache/temporï¿½rios do React/Node
+.parcel-cache/ 
+.cache/ 
+coverage/ 
 
-# --- Ignorar arquivos e diretórios padrão do Visual Studio Code (VS Code) ---
+# --- Ignorar arquivos e diretï¿½rios padrï¿½o do Visual Studio Code (VS Code) ---
 
-# Configurações de workspace do VS Code
+# Configuraï¿½ï¿½es de workspace do VS Code
 .vscode/
 
 # --- Ignorar arquivos do Sistema Operacional ---
@@ -143,40 +143,40 @@ $RECYCLE.BIN/
 
 # --- Outros arquivos comuns a ignorar ---
 
-# Logs genéricos
+# Logs genï¿½ricos
 *.log
 
-# Arquivos de IDE genéricos ou temporários
+# Arquivos de IDE genï¿½ricos ou temporï¿½rios
 *.bak
 *.tmp
 
-# Arquivos de configuração de segurança
+# Arquivos de configuraï¿½ï¿½o de seguranï¿½a
 *.pfx
 
 # Arquivos de database local
-# Se você usa SQLite diretamente na raiz do projeto ou em um local não coberto
+# Se vocï¿½ usa SQLite diretamente na raiz do projeto ou em um local nï¿½o coberto
 # pelo '.vs/', como na sua imagem:
 *.db
 *.db-shm
 *.db-wal
 
-# Arquivos de compilação ou cache gerados por outras ferramentas
+# Arquivos de compilaï¿½ï¿½o ou cache gerados por outras ferramentas
 # (Ex: Visual Studio Code's C# extension ou ReSharper)
 *.dtbcache.v2
 *.fucache.v2
 # ReSharper e outros auxiliares de desenvolvimento
-.idea/ # Para IntelliJ/WebStorm
+.idea/ 
 *.dotSettings
 *.resharper
 
 # ==============================================================================
-# Exceções (arquivos que devem ser versionados mesmo que suas pastas sejam ignoradas)
-# Certifique-se de que os .csproj e .sln não sejam ignorados!
+# Exceï¿½ï¿½es (arquivos que devem ser versionados mesmo que suas pastas sejam ignoradas)
+# Certifique-se de que os .csproj e .sln nï¿½o sejam ignorados!
 # Para o React, o package.json e package-lock.json/yarn.lock devem ser versionados.
 # ==============================================================================
 
-# Se você ignorar um diretório inteiro (ex: "docs/"), mas precisa de um arquivo específico dentro dele:
+# Se vocï¿½ ignorar um diretï¿½rio inteiro (ex: "docs/"), mas precisa de um arquivo especï¿½fico dentro dele:
 #!docs/ImportantDocument.md
 
-# Se você tem um diretório de binários específico que DEVE ser versionado (situação rara)
+# Se vocï¿½ tem um diretï¿½rio de binï¿½rios especï¿½fico que DEVE ser versionado (situaï¿½ï¿½o rara)
 #!bin/MySpecialTool.exe
