@@ -3,37 +3,16 @@ import './TelaPrincipal.css'
 import BarraLateral from '../BarraLateral/BarraLateral.jsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus, faChartLine, faMagnifyingGlass, faBoxOpen } from '@fortawesome/free-solid-svg-icons';
+import DateTimeDisplay from '../../Hooks/DateTimeDisplay.jsx';
 
 const TelaPrincipal = () => {
-    const [dataHoraAtual, setDataHoraAtul] = useState('');
-
-    useEffect(() => {
-        const atualizarDataHora = () => {
-            const agora = new Date();
-
-            const dia = agora.getDate().toString().padStart(2, '0');
-            const nomeMes = new Intl.DateTimeFormat('pt-BR', { month: 'long' }).format(agora);
-            const ano = agora.getFullYear();
-
-            const horas = agora.getHours().toString().padStart(2, '0');
-            const minutos = agora.getMinutes().toString().padStart(2, '0');
-
-            setDataHoraAtul(`${dia} de ${nomeMes} de ${ano} | ${horas}:${minutos}`)
-        };
-
-        atualizarDataHora();
-        const intervalo = setInterval(atualizarDataHora, 1000);
-
-        return () => clearInterval(intervalo);
-    }, []);
-
     return (
         <>
         <BarraLateral />
         <div className='tela-principal'>
             <div className='tela-principal-cabecalho'>
                 <h1>Dashboard de Gestão</h1>
-                <span>{dataHoraAtual}</span>
+                <DateTimeDisplay/>
             </div>
 
             <div className='tela-principal-informacoes'>

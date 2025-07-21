@@ -1,6 +1,7 @@
 import React from 'react'
 import BarraLateral from '../BarraLateral/BarraLateral'
 import './VendasEPedidos.css'
+import DateTimeDisplay from '../../Hooks/DateTimeDisplay.jsx';
 
 
 const VendasEPedidos = () => {
@@ -10,6 +11,7 @@ const VendasEPedidos = () => {
       <div className='tela-principal-vendas'>
         <div className='tela-principal-vendas-cabecalho'>
           <h1>Vendas e Pedidos</h1>
+          <DateTimeDisplay/>
         </div>
 
         <div className='tela-principal-vendas-informacoes'>

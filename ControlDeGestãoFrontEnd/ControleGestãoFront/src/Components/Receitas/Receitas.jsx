@@ -1,6 +1,7 @@
 import React from 'react'
 import BarraLateral from '../BarraLateral/BarraLateral'
 import './Receitas.css'
+import DateTimeDisplay from '../../Hooks/DateTimeDisplay.jsx';
 
 const Receitas = () => {
   return (
@@ -9,6 +10,7 @@ const Receitas = () => {
       <div className='tela-principal-receitas'>
         <div className='tela-principal-receitas-cabecalho'>
           <h1>Receitas</h1>
+          <DateTimeDisplay/>
         </div>
 
         <div className='tela-receitas-informacoes'>
