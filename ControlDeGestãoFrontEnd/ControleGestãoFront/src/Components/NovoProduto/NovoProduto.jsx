@@ -14,7 +14,6 @@ const NovoProduto = () => {
 
                 <div className='tela-principal-cadastrar'>
                     <h1>ola</h1>
-                    <h1>teste</h1>
                 </div>
 
             </div>
