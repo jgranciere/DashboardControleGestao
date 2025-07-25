@@ -103,7 +103,7 @@ namespace WebApplication1.Controllers
                     p.Preco,
                     p.Imagem,
                     Categoria = new { p.Categoria.Id, p.Categoria.Nome },
-                    UnidadeMedida = p.UnidadeMedida.ToString(),
+                   
                     EstoqueAtual = estoqueAtual,
                     Indisponivel = estoqueAtual <= 0,
                     TotalEntradas = 0,
@@ -144,29 +144,21 @@ namespace WebApplication1.Controllers
                 return BadRequest("Categoria inválida.");
             }
 
-            if (!Enum.IsDefined(typeof(UnidadeMedida), produtoDto.UnidadeMedida))
-            {
-                return BadRequest("Unidade de medida inválida. Use: Unidade, Kg, Grama, Litro, Mililitro.");
-            }
-
             var produto = new CriaProduto
             {
                 Nome = produtoDto.Nome,
                 Descricao = produtoDto.Descricao,
                 Preco = produtoDto.Preco,
                 Imagem = produtoDto.Imagem,
-                Categoria = categoria,
-                UnidadeMedida = produtoDto.UnidadeMedida,
-                EstoqueMinimo = produtoDto.EstoqueMinimo,
-                Validade = produtoDto.Validade
+                Categoria = categoria
             };
-
 
             _context.Produtos.Add(produto);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetProdutos), new { id = produto.Id }, produto);
         }
+
 
 
 
@@ -207,18 +199,17 @@ namespace WebApplication1.Controllers
             if (categoria == null)
                 return BadRequest("Categoria inválida.");
 
-            
             produto.Nome = produtoDto.Nome;
             produto.Descricao = produtoDto.Descricao;
             produto.Preco = produtoDto.Preco;
             produto.Imagem = produtoDto.Imagem;
             produto.Categoria = categoria;
-            produto.UnidadeMedida = produtoDto.UnidadeMedida;
 
             await _context.SaveChangesAsync();
 
             return Ok(produto);
         }
+
 
 
     }

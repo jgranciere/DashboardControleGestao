@@ -135,7 +135,6 @@ C:\Users\Gamer\OneDrive\Área de Trabalho\sites thiago\DashboardControleGestao\C
 C:\Users\Gamer\OneDrive\Área de Trabalho\sites thiago\DashboardControleGestao\ControlDeGestãoBackEnd\ControlDeGestãoBackEnd\WebApplication1\obj\Debug\net8.0\WebApplication1.pdb
 C:\Users\Gamer\OneDrive\Área de Trabalho\sites thiago\DashboardControleGestao\ControlDeGestãoBackEnd\ControlDeGestãoBackEnd\WebApplication1\obj\Debug\net8.0\WebApplication1.genruntimeconfig.cache
 C:\Users\Gamer\OneDrive\Área de Trabalho\sites thiago\DashboardControleGestao\ControlDeGestãoBackEnd\ControlDeGestãoBackEnd\WebApplication1\obj\Debug\net8.0\ref\WebApplication1.dll
-C:\Users\Gamer\OneDrive\Área de Trabalho\sites thiago\DashboardControleGestao\ControlDeGestãoBackEnd\ControlDeGestãoBackEnd\WebApplication1\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\joaop\OneDrive\Área de Trabalho\DashboardControleGestao\ControlDeGestãoBackEnd\ControlDeGestãoBackEnd\WebApplication1\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\joaop\OneDrive\Área de Trabalho\DashboardControleGestao\ControlDeGestãoBackEnd\ControlDeGestãoBackEnd\WebApplication1\bin\Debug\net8.0\appsettings.json
 C:\Users\joaop\OneDrive\Área de Trabalho\DashboardControleGestao\ControlDeGestãoBackEnd\ControlDeGestãoBackEnd\WebApplication1\bin\Debug\net8.0\WebApplication1.staticwebassets.endpoints.json
@@ -274,3 +273,4 @@ C:\Users\joaop\OneDrive\Área de Trabalho\DashboardControleGestao\ControlDeGest�
 C:\Users\joaop\OneDrive\Área de Trabalho\DashboardControleGestao\ControlDeGestãoBackEnd\ControlDeGestãoBackEnd\WebApplication1\obj\Debug\net8.0\WebApplication1.genruntimeconfig.cache
 C:\Users\joaop\OneDrive\Área de Trabalho\DashboardControleGestao\ControlDeGestãoBackEnd\ControlDeGestãoBackEnd\WebApplication1\obj\Debug\net8.0\ref\WebApplication1.dll
 C:\Users\joaop\OneDrive\Área de Trabalho\DashboardControleGestao\ControlDeGestãoBackEnd\ControlDeGestãoBackEnd\WebApplication1\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Gamer\OneDrive\Área de Trabalho\sites thiago\DashboardControleGestao\ControlDeGestãoBackEnd\ControlDeGestãoBackEnd\WebApplication1\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

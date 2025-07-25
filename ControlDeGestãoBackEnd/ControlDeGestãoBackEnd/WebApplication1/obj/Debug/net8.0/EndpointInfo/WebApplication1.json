@@ -615,14 +615,14 @@
         }
       }
     },
-    "/api/Receitas/{produtoId}": {
+    "/api/Receitas/{id}": {
       "get": {
         "tags": [
           "Receitas"
         ],
         "parameters": [
           {
-            "name": "produtoId",
+            "name": "id",
             "in": "path",
             "required": true,
             "schema": {
@@ -636,16 +636,14 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/Receitas/custo/{produtoId}": {
-      "get": {
+      },
+      "put": {
         "tags": [
           "Receitas"
         ],
         "parameters": [
           {
-            "name": "produtoId",
+            "name": "id",
             "in": "path",
             "required": true,
             "schema": {
@@ -654,6 +652,25 @@
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReceitaDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReceitaDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReceitaDTO"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -687,29 +704,15 @@
         "additionalProperties": false
       },
       "CriaProdutoDTO": {
-        "required": [
-          "estoqueMinimo",
-          "nome",
-          "preco",
-          "unidadeMedida",
-          "validade"
-        ],
         "type": "object",
         "properties": {
           "nome": {
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "descricao": {
             "type": "string",
             "nullable": true
-          },
-          "imagem": {
-            "type": "string",
-            "nullable": true
-          },
-          "unidadeMedida": {
-            "$ref": "#/components/schemas/UnidadeMedida"
           },
           "preco": {
             "type": "number",
@@ -719,13 +722,9 @@
             "type": "integer",
             "format": "int32"
           },
-          "estoqueMinimo": {
-            "type": "number",
-            "format": "double"
-          },
-          "validade": {
+          "imagem": {
             "type": "string",
-            "format": "date-time"
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -870,7 +869,37 @@
         },
         "additionalProperties": false
       },
-      "ItemReceitaDTO": {
+      "ReceitaDTO": {
+        "required": [
+          "nome",
+          "produtoId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "produtoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "itens": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReceitaItemDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReceitaItemDTO": {
         "type": "object",
         "properties": {
           "ingredienteId": {
@@ -878,29 +907,9 @@
             "format": "int32"
           },
           "quantidade": {
+            "minimum": 0,1,
             "type": "number",
             "format": "double"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ReceitaDTO": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "produtoId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "itens": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ItemReceitaDTO"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false

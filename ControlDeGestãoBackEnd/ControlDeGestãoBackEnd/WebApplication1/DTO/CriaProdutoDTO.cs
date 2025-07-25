@@ -4,25 +4,9 @@ using WebApplication1.Model;
 
 public class CriaProdutoDTO
 {
-    [Required]
-    public string Nome { get; set; }
-
-    public string Descricao { get; set; }
-
-    public string Imagem { get; set; }
-
-    [Required]
-    [JsonConverter(typeof(JsonStringEnumConverter))]
-    public UnidadeMedida UnidadeMedida { get; set; }
-
-    [Required]
+    public string Nome { get; set; } = string.Empty;
+    public string Descricao { get; set; } 
     public double Preco { get; set; }
-
     public int IdCategoria { get; set; }
-
-    [Required]
-    public double EstoqueMinimo { get; set; }
-
-    [Required]
-    public DateTime? Validade { get; set; }
+    public string? Imagem { get; set; }
 }

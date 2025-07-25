@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using WebApplication1.Model;
+using WebApplication1.Enums;
+
 
 namespace WebApplication1.DTO
 {

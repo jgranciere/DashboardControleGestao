@@ -60,11 +60,10 @@ namespace WebApplication1.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<double>("EstoqueMinimo")
-                        .HasColumnType("double precision");
+                    b.Property<int>("EstoqueMinimo")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Imagem")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Nome")
@@ -76,9 +75,6 @@ namespace WebApplication1.Migrations
 
                     b.Property<int>("UnidadeMedida")
                         .HasColumnType("integer");
-
-                    b.Property<DateTime>("Validade")
-                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
@@ -183,7 +179,7 @@ namespace WebApplication1.Migrations
 
                     b.HasIndex("receitaId");
 
-                    b.ToTable("ItensReceita");
+                    b.ToTable("ItemReceitas");
                 });
 
             modelBuilder.Entity("WebApplication1.Model.Receita", b =>
@@ -193,6 +189,10 @@ namespace WebApplication1.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<int>("ProdutoId")
                         .HasColumnType("integer");

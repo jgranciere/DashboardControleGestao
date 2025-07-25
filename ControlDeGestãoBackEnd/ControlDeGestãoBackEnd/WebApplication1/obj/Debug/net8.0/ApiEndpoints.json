@@ -359,7 +359,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "WebApplication1.DTO.ReceitaDTO",
+        "Type": "ReceitaDTO",
         "IsRequired": true
       }
     ],
@@ -367,14 +367,14 @@
   },
   {
     "ContainingType": "WebApplication1.Controllers.ReceitasController",
-    "Method": "GetReceitaPorProduto",
-    "RelativePath": "api/Receitas/{produtoId}",
+    "Method": "ObterReceita",
+    "RelativePath": "api/Receitas/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "produtoId",
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -383,15 +383,20 @@
   },
   {
     "ContainingType": "WebApplication1.Controllers.ReceitasController",
-    "Method": "GetCustoDeProducao",
-    "RelativePath": "api/Receitas/custo/{produtoId}",
-    "HttpMethod": "GET",
+    "Method": "AtualizarReceita",
+    "RelativePath": "api/Receitas/{id}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "produtoId",
+        "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "ReceitaDTO",
         "IsRequired": true
       }
     ],

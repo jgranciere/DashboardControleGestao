@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using WebApplication1.Model;
 using System.Text.Json.Serialization;
+using WebApplication1.Enums;
+
 
 namespace WebApplication1.DTO
 {

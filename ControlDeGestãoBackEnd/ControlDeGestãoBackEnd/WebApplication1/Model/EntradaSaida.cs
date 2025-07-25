@@ -1,7 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using WebApplication1.Enums;
+
 
 namespace WebApplication1.Model
 {
+    
     public class EntradaSaida
     {
         public int Id { get; set; }

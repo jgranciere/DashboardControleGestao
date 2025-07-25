@@ -10,91 +10,63 @@ namespace WebApplication1.Controllers
     [Route("api/[controller]")]
     public class ReceitasController : ControllerBase
     {
-        private readonly GestaoDbContext _context;
-        public  ReceitasController(GestaoDbContext context)
+        private readonly IReceitaService _receitaService;
+
+        public ReceitasController(IReceitaService receitaService)
         {
-            _context = context;
+            _receitaService = receitaService;
         }
 
         [HttpPost]
         public async Task<IActionResult> CriarReceita([FromBody] ReceitaDTO dto)
         {
-            var produto = await _context.Produtos.FindAsync(dto.ProdutoId);
-            if (produto == null)
-                return NotFound("Produto Não encontrado");
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
-            var receita = new Receita
+            try
             {
-                ProdutoId = dto.ProdutoId,
-            };
-
-            foreach (var item in dto.Itens)
-            {
-                var ingrediente = await _context.Produtos.FindAsync(item.IngredienteId);
-                if (ingrediente == null)
-                    return BadRequest($"Ingrediente com ID {item.IngredienteId} não encontrado");
-
-                receita.Itens.Add(new ItemReceita
-                {
-                    IngredienteId = item.IngredienteId,
-                    Quantidade = item.Quantidade
-                });
+                var resultado = await _receitaService.CriarReceitaAsync(dto);
+                return Created(string.Empty, resultado);
             }
-
-            _context.Receitas.Add(receita);
-            await _context.SaveChangesAsync();
-
-            return Ok(receita);
-        }
-
-
-        [HttpGet("{produtoId}")]
-        public async Task<IActionResult> GetReceitaPorProduto(int produtoId)
-        {
-            var receita = await _context.Receitas
-                .Include(r => r.Itens)
-                .ThenInclude(i => i.Ingrediente)
-                .FirstOrDefaultAsync(r => r.ProdutoId == produtoId);
-
-            if (receita == null)
-                return NotFound("Receita não encontrada");
-
-            return Ok(new
+            catch (ArgumentException ex)
             {
-                Produto = receita.ProdutoId,
-                Ingredientes = receita.Itens.Select(i => new
-                {
-                    i.IngredienteId,
-                    nome = i.Ingrediente.Nome,
-                    Quantidade = i.Quantidade,
-                    unidade = i.Ingrediente.UnidadeMedida.ToString()
-                })
-            });
-        }
-
-        [HttpGet("custo/{produtoId}")]
-        public async Task<IActionResult> GetCustoDeProducao(int produtoId)
-        {
-            var receita = await _context.Receitas
-                .Include(r => r.Itens)
-                .ThenInclude(i => i.Ingrediente)
-                .FirstOrDefaultAsync(r => r.ProdutoId == produtoId);
-
-            if (receita == null)
-                return NotFound("Receita não encontrada");
-
-            double custoTotal = 0;
-
-            foreach (var item in receita.Itens)
-            {
-                custoTotal += item.Ingrediente.Preco * item.Quantidade;
+                return BadRequest(new { erro = ex.Message });
             }
-
-            return Ok(new
-            {
-                ProdutoId = produtoId,
-                CustoDeProducao = custoTotal
-            });
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> ObterReceita(int id)
+        {
+            var receita = await _receitaService.ObterReceitaPorIdAsync(id);
+            if (receita == null)
+                return NotFound("Receita não encontrada.");
+            return NotFound(new { erro = "Receita não encontrada." });
+
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> AtualizarReceita(int id, [FromBody] ReceitaDTO dto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
+            {
+                dto.Id = id; // garante consistência
+                var resultado = await _receitaService.AtualizarReceitaAsync(dto);
+                return Ok(resultado);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { erro = ex.Message });
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { erro = ex.Message });
+            }
+        }
+
+
     }
+
 }
