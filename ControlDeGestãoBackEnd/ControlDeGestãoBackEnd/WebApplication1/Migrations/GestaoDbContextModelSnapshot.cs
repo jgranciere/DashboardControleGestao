@@ -22,6 +22,35 @@ namespace WebApplication1.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("ItemPedido", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("PedidoId")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("PrecoUnitario")
+                        .HasColumnType("double precision");
+
+                    b.Property<int>("ProdutoId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PedidoId");
+
+                    b.HasIndex("ProdutoId");
+
+                    b.ToTable("ItensPedido");
+                });
+
             modelBuilder.Entity("WebApplication1.Model.Categoria", b =>
                 {
                     b.Property<int>("Id")
@@ -43,6 +72,50 @@ namespace WebApplication1.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categorias");
+                });
+
+            modelBuilder.Entity("WebApplication1.Model.CriaPedido", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CuponDesconto")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("DataEntrega")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DataPedido")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("EnderecoEntrega")
+                        .HasColumnType("text");
+
+                    b.Property<string>("NomeCliente")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Observacoes")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("TelefoneContato")
+                        .HasColumnType("text");
+
+                    b.Property<double>("ValorEntrega")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("ValorTotal")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Pedidos");
                 });
 
             modelBuilder.Entity("WebApplication1.Model.CriaProduto", b =>
@@ -204,6 +277,25 @@ namespace WebApplication1.Migrations
                     b.ToTable("Receitas");
                 });
 
+            modelBuilder.Entity("ItemPedido", b =>
+                {
+                    b.HasOne("WebApplication1.Model.CriaPedido", "Pedido")
+                        .WithMany("Itens")
+                        .HasForeignKey("PedidoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WebApplication1.Model.CriaProduto", "Produto")
+                        .WithMany()
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pedido");
+
+                    b.Navigation("Produto");
+                });
+
             modelBuilder.Entity("WebApplication1.Model.CriaProduto", b =>
                 {
                     b.HasOne("WebApplication1.Model.Categoria", "Categoria")
@@ -254,6 +346,11 @@ namespace WebApplication1.Migrations
                         .IsRequired();
 
                     b.Navigation("Produto");
+                });
+
+            modelBuilder.Entity("WebApplication1.Model.CriaPedido", b =>
+                {
+                    b.Navigation("Itens");
                 });
 
             modelBuilder.Entity("WebApplication1.Model.Receita", b =>

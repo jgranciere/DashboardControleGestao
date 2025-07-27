@@ -14,6 +14,8 @@ namespace Database;
     public DbSet<Receita> Receitas { get; set; }
     public DbSet<Ingrediente> Ingredientes { get; set; }
     public DbSet<ItemReceita> ItemReceitas { get; set; }
+    public DbSet<CriaPedido> Pedidos { get; set; }
+    public DbSet<ItemPedido> ItensPedido { get; set; }
 
 
 
